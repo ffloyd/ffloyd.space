@@ -8,12 +8,12 @@ A website with a collection of things I've built, written, or found interesting.
 The project is built with SvelteKit, TailwindCSS, and Bun as runtime and dependency manager.
 Essential commands are:
 
-- `bun run --bun dev` - Start development server with hot reloading
+- `bun run dev` - Start development server with hot reloading
 - `bun test` - Run unit tests
-- `bun run --bun build` - Build for production (useful as a test of successful compilation)
-- `bun run --bun preview` - Preview production build locally (no hot reloading)
-- `bun run --bun lint` - Run all linters
-- `bun run --bun format` - Format all files
+- `bun run build` - Build for production (useful as a test of successful compilation)
+- `bun run preview` - Preview production build locally (no hot reloading)
+- `bun run lint` - Run all linters
+- `bun run format` - Format all files
 
 ## Idea
 

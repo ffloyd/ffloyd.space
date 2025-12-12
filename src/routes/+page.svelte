@@ -31,8 +31,8 @@
   <a
     href={resolve(to)}
     class="text-lg transition-all duration-200 {highlightedLinkIndex === index
-      ? 'text-white text-shadow-[0_0_20px] text-shadow-white'
-      : 'text-white/90 hover:text-white hover:text-shadow-[0_0_20px] hover:text-shadow-white'}"
+      ? 'text-white text-glow'
+      : 'text-white/90 hover:text-white hover:text-glow active:text-white active:text-glow'}"
     onfocus={() => setTopText(topText)}
     onblur={() => clearTopText()}
     onmouseenter={() => setTopText(topText)}
@@ -46,8 +46,8 @@
   <span class="text-white/80">-</span>
 {/snippet}
 
-<div class="flex flex-col items-center justify-center w-screen h-screen">
-  <span class="text-white/50">&nbsp;{topText}&nbsp;</span>
+<div class="flex flex-col items-center justify-center w-dvw h-dvh">
+  <span class="text-white/50 pointer-coarse:hidden">&nbsp;{topText}&nbsp;</span>
 
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
@@ -60,7 +60,7 @@
     ffloyd.space
   </h1>
 
-  <div class="mt-6">
+  <div class="mt-6 mx-2">
     {@render link('about', '/', 0, "I'm Roman Kolesnev. My personal page is")}
     {@render delimiter()}
     {@render link('things', '/', 1, "What I've done. Good things at")}

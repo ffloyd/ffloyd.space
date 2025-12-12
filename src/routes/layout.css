@@ -12,6 +12,10 @@
   --font-mono: 'Iosevka', ui-monospace, monospace;
 }
 
+@utility text-glow {
+  @apply text-shadow-[0_0_20px] text-shadow-white;
+}
+
 body {
   background-color: black;
 }

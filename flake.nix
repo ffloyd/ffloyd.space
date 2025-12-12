@@ -17,6 +17,7 @@
         packages = with pkgs; [
           # runtime
           bun 
+          nodejs # without it even `bun dev` takes +10 second to start (I dunno why)
 
           # LSP
           typescript-language-server
