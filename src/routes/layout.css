@@ -16,6 +16,12 @@
   @apply text-shadow-[0_0_20px] text-shadow-white;
 }
 
-body {
-  background-color: black;
+@utility text-neutral {
+  @apply text-white/50;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-neutral;
+  }
 }

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { settled, tick } from 'svelte';
+  import Link from '$lib/components/Link.svelte';
 
   type Link = Parameters<typeof resolve>[0];
 
@@ -28,18 +29,17 @@
 </script>
 
 {#snippet link(title: string, to: Link, index: number, topText: string)}
-  <a
+  <Link
     href={resolve(to)}
-    class="text-lg transition-all duration-200 {highlightedLinkIndex === index
-      ? 'text-white text-glow'
-      : 'text-white/90 hover:text-white hover:text-glow active:text-white active:text-glow'}"
+    main
+    class={['text-lg', highlightedLinkIndex === index && 'text-white! text-glow!']}
     onfocus={() => setTopText(topText)}
     onblur={() => clearTopText()}
     onmouseenter={() => setTopText(topText)}
     onmouseleave={() => clearTopText()}
   >
     {title}
-  </a>
+  </Link>
 {/snippet}
 
 {#snippet delimiter()}
@@ -47,7 +47,7 @@
 {/snippet}
 
 <div class="flex flex-col items-center justify-center w-dvw h-dvh">
-  <span class="text-white/50 pointer-coarse:hidden">&nbsp;{topText}&nbsp;</span>
+  <span class="pointer-coarse:hidden">&nbsp;{topText}&nbsp;</span>
 
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
@@ -67,6 +67,6 @@
     {@render delimiter()}
     {@render link('thoughts', '/', 2, 'I think a lot. I share at')}
     {@render delimiter()}
-    {@render link('vision', '/', 3, 'My path to future. Hard opinions at')}
+    {@render link('vision', '/vision', 3, 'My path to future. Hard opinions at')}
   </div>
 </div>
