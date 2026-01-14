@@ -1,0 +1,16 @@
+---
+layout: vision
+---
+# Design Systems, Not Solutions
+
+When faced with problems, our instinct is to solve them one by one. This leads to 50 different solutions for 50 different problems. Each solution has its own quirks, edge cases, and maintenance burden.
+
+A better approach is to **design systems** that naturally solve multiple problems at once. Instead of building individual solutions, create frameworks and patterns that address entire classes of problems.
+
+**Benefits of system thinking:**
+- Fewer concepts to understand and maintain
+- Consistent behavior across different scenarios
+- Easier to extend and adapt
+- Reduced cognitive load for the team
+
+It is easier to understand 5 interconnected concepts that solve 50 problems than to juggle 50 separate solutions. Systems thinking scales better than solution thinking.

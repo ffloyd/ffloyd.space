@@ -1,0 +1,20 @@
+---
+layout: vision
+---
+# Always Reduce Cognitive Complexity
+
+Human working memory can hold approximately 4-7 items simultaneously. This is not a guideline, it is a biological constraint. Yet we often write code that requires tracking dozens of concepts at once.
+
+**Cognitive complexity** is not about lines of code or cyclomatic complexity. It is about how many things you need to keep in your head to understand what the code does.
+
+Every variable, every condition, every abstraction adds to the cognitive load. When this load exceeds our mental capacity, bugs appear and understanding breaks down.
+
+## Practical approaches
+
+- Break large functions into smaller ones with clear responsibilities
+- Limit the number of variables in scope
+- Use meaningful names that reduce need for additional context
+- Structure code to minimize nested conditions
+- Extract complex expressions into named variables
+
+Design code for the process of understanding, not just for execution. If understanding requires holding more than 4-5 concepts in your head, simplify it.

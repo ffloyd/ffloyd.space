@@ -10,18 +10,81 @@
     'Iosevka Etoile', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
   --font-mono: 'Iosevka', ui-monospace, monospace;
+
+  /* Semantic color tokens */
+  --color-line-border: color-mix(in oklab, #fff 10%, transparent);
+  --color-line-separator: color-mix(in oklab, #fff 20%, transparent);
+  --color-content-default: color-mix(in oklab, #fff 50%, transparent);
+  --color-content-reading: color-mix(in oklab, #fff 60%, transparent);
+  --color-content-emphasis: color-mix(in oklab, #fff 70%, transparent);
+  --color-content-primary: color-mix(in oklab, #fff 80%, transparent);
+  --color-content-accent: color-mix(in oklab, #fff 90%, transparent);
+  --color-content-active: #fff;
 }
 
-@utility text-glow {
+@utility text-glow-active {
   @apply text-shadow-[0_0_20px] text-shadow-white;
 }
 
-@utility text-neutral {
-  @apply text-white/50;
+@utility text-glow-emphasis {
+  @apply text-shadow-[0_0_20px] text-shadow-white/50;
+}
+
+@utility prose-space {
+  --tw-prose-body: var(--color-content-reading);
+  --tw-prose-headings: var(--color-content-primary);
+  --tw-prose-lead: color-mix(in oklab, #fff 40%, transparent);
+  --tw-prose-links: var(--color-content-primary);
+  --tw-prose-bold: var(--color-content-emphasis);
+  --tw-prose-counters: color-mix(in oklab, #fff 40%, transparent);
+  --tw-prose-bullets: color-mix(in oklab, #fff 40%, transparent);
+  --tw-prose-hr: var(--color-line-separator);
+  --tw-prose-quotes: var(--color-content-primary);
+  --tw-prose-quote-borders: var(--color-line-separator);
+  --tw-prose-captions: color-mix(in oklab, #fff 40%, transparent);
+  --tw-prose-kbd: var(--color-content-primary);
+  --tw-prose-kbd-shadows: var(--color-line-border);
+  --tw-prose-code: var(--color-content-primary);
+  --tw-prose-pre-code: var(--color-content-reading);
+  --tw-prose-pre-bg: color-mix(in oklab, #000 50%, transparent);
+  --tw-prose-th-borders: color-mix(in oklab, #fff 40%, transparent);
+  --tw-prose-td-borders: var(--color-line-separator);
+}
+
+@layer components {
+  .article {
+    /* Use typography plugin with customizations */
+    @apply prose prose-space max-sm:prose-sm;
+    /* Level 1 heading. Expected to be only one in the beginning of article. */
+    @apply prose-h1:text-glow-emphasis prose-h1:text-center;
+    /* Links. Looks slightly different than naviagational links. It's intentional. Think of them as a separate type of links. */
+    @apply prose-a:decoration-line-separator prose-a:underline-offset-4 prose-a:decoration-2;
+    @apply prose-a:transition-all prose-a:duration-200 prose-a:hover:text-content-active prose-a:hover:text-glow-active;
+  }
+
+  .link {
+    @apply text-content-accent;
+    @apply hover:text-content-active hover:text-glow-active;
+    @apply active:text-content-active active:text-glow-active;
+    @apply transition-all duration-200;
+  }
+
+  .link {
+    @apply text-content-accent;
+    @apply hover:text-content-active hover:text-glow-accent;
+    @apply active:text-content-active active:text-glow-accent;
+    @apply transition-all duration-200;
+  }
+
+  .link-back {
+    @apply text-content-primary;
+    @apply hover:text-content-active;
+    @apply transition-all duration-200;
+  }
 }
 
 @layer base {
   body {
-    @apply bg-black text-neutral;
+    @apply bg-black text-content-default;
   }
 }

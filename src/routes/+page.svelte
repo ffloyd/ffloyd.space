@@ -1,7 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { settled, tick } from 'svelte';
-  import Link from '$lib/components/Link.svelte';
 
   type Link = Parameters<typeof resolve>[0];
 
@@ -29,21 +28,23 @@
 </script>
 
 {#snippet link(title: string, to: Link, index: number, topText: string)}
-  <Link
+  <a
     href={resolve(to)}
-    main
-    class={['text-lg', highlightedLinkIndex === index && 'text-white! text-glow!']}
+    class={[
+      'link text-lg',
+      highlightedLinkIndex === index && 'text-content-active! text-glow-active!'
+    ]}
     onfocus={() => setTopText(topText)}
     onblur={() => clearTopText()}
     onmouseenter={() => setTopText(topText)}
     onmouseleave={() => clearTopText()}
   >
     {title}
-  </Link>
+  </a>
 {/snippet}
 
 {#snippet delimiter()}
-  <span class="text-white/80">-</span>
+  <span class="text-content-primary">-</span>
 {/snippet}
 
 <div class="flex flex-col items-center justify-center w-dvw h-dvh">
@@ -52,7 +53,7 @@
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <h1
-    class="text-white/80 hover:text-white transition-color duration-200 text-[12vw] md:text-8xl cursor-default"
+    class="text-content-primary hover:text-content-active transition-color duration-200 text-[12vw] md:text-8xl cursor-default"
     onclick={() => {
       if (highlightedLinkIndex === null) animateLinks();
     }}
