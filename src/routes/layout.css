@@ -56,9 +56,9 @@
     /* Use typography plugin with customizations */
     @apply prose prose-space max-sm:prose-sm;
     /* Level 1 heading. Expected to be only one in the beginning of article. */
-    @apply prose-h1:text-glow-emphasis prose-h1:text-center;
+    @apply prose-h1:text-center prose-h1:text-glow-emphasis;
     /* Links. Looks slightly different than naviagational links. It's intentional. Think of them as a separate type of links. */
-    @apply prose-a:decoration-line-separator prose-a:underline-offset-4 prose-a:decoration-2;
+    @apply prose-a:decoration-line-separator prose-a:decoration-2 prose-a:underline-offset-4;
     @apply prose-a:transition-all prose-a:duration-200 prose-a:hover:text-content-active prose-a:hover:text-glow-active;
   }
 
@@ -71,8 +71,8 @@
 
   .link {
     @apply text-content-accent;
-    @apply hover:text-content-active hover:text-glow-accent;
-    @apply active:text-content-active active:text-glow-accent;
+    @apply hover:text-content-active hover:text-glow-active;
+    @apply active:text-content-active active:text-glow-active;
     @apply transition-all duration-200;
   }
 
