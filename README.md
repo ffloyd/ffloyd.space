@@ -6,7 +6,8 @@ A website with a collection of things I've built, written, or found interesting.
 ## Development
 
 The project is built with SvelteKit, TailwindCSS, and Bun as runtime and dependency manager.
-Essential commands are:
+
+Use the following commands for development:
 
 - `bun run dev` - Start development server with hot reloading
 - `bun test` - Run unit tests

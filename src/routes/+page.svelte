@@ -1,5 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
+  import ScreenCenter from '$lib/components/ScreenCenter.svelte';
   import { settled, tick } from 'svelte';
 
   type Link = Parameters<typeof resolve>[0];
@@ -47,13 +48,13 @@
   <span class="text-content-primary">-</span>
 {/snippet}
 
-<div class="flex flex-col items-center justify-center w-dvw h-dvh">
+<ScreenCenter>
   <span class="pointer-coarse:hidden">&nbsp;{topText}&nbsp;</span>
 
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <h1
-    class="text-content-primary hover:text-content-active transition-color duration-200 text-[12vw] md:text-8xl cursor-default"
+    class="central-title"
     onclick={() => {
       if (highlightedLinkIndex === null) animateLinks();
     }}
@@ -62,12 +63,12 @@
   </h1>
 
   <div class="mt-6 mx-2">
-    {@render link('about', '/', 0, "I'm Roman Kolesnev. My personal page is")}
+    {@render link('about', '/about', 0, "I'm Roman Kolesnev. My personal page is")}
     {@render delimiter()}
-    {@render link('things', '/', 1, "What I've done. Good things at")}
+    {@render link('things', '/things', 1, "What I've done. Good things at")}
     {@render delimiter()}
-    {@render link('thoughts', '/', 2, 'I think a lot. I share at')}
+    {@render link('thoughts', '/thoughts', 2, 'I think a lot. I share at')}
     {@render delimiter()}
     {@render link('vision', '/vision', 3, 'My path to future. Hard opinions at')}
   </div>
-</div>
+</ScreenCenter>

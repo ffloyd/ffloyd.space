@@ -17,43 +17,4 @@ development_, particularly in the __context of [code](http://localhost) quality_
 
 When developers encounter messy, poorly written, or "ugly" code, it can lead to a sense of
 resignation or acceptance that such code is the norm. This mindset can result in further
-deterioration of the codebase, as developers may feel less motivated to maintain high
-
----
-
-## Subsection Standards
-
-To mitigate this effect, it's crucial to address technical debt and maintain code quality.
-When introducing new features or making changes, strive to do so in a way that preserves or
-enhances the cleanliness of the codebase. This might involve refactoring existing code,
-improving documentation, or adhering to coding standards.
-
-* A clean codebase promotes a positive feedback loop, where developers feel empowered to
-  contribute high-quality code, leading to a more maintainable and robust software product.
-* Taking proactive steps to manage technical debt can prevent the accumulation of "broken windows"
-  in the codebase, ultimately leading to a healthier development environment and better
-  outcomes for the project.
-* Dedication to code quality reflects a commitment to excellence and professionalism within the
-  development team.
-
-I want to provide a [link to a related resource](https://example.com/broken-windows-theory) then can be useful for further reading on this topic.
-
-```
-import { cleanCodePractices } from 'code-quality-tools';
-cleanCodePractices.applyBestPractices();
-```
-
-A table:
-
-| Practice               | Description                                      |
-|------------------------|--------------------------------------------------|
-| Regular Refactoring    | Continuously improve code structure and clarity.  |
-| Code Reviews           | Peer reviews to ensure code quality and standards.|
-| Automated Testing      | Implement tests to catch issues early.           |
-
-
-One negineer said about this:
-
-> Maintaining a clean codebase is not just about aesthetics; it's about fostering a culture of
-> excellence and pride in our work. When we take care of our code, we take care of our
-> product and our users.
+deterioration of the codebase, as developers may feel less motivated to maintain desired quality bar.

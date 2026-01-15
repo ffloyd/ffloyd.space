@@ -69,17 +69,18 @@
     @apply transition-all duration-200;
   }
 
-  .link {
-    @apply text-content-accent;
-    @apply hover:text-content-active hover:text-glow-active;
-    @apply active:text-content-active active:text-glow-active;
-    @apply transition-all duration-200;
-  }
-
   .link-back {
     @apply text-content-primary;
     @apply hover:text-content-active;
     @apply transition-all duration-200;
+  }
+
+  .central-title {
+    @apply text-content-primary hover:text-content-active;
+    @apply transition-colors duration-200;
+    @apply text-[12vw] md:text-8xl;
+    @apply text-center;
+    @apply cursor-default;
   }
 }
 
