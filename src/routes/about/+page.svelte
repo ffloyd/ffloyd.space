@@ -1,5 +1,8 @@
 <script lang="ts">
-  import UnderConstruction from '$lib/components/UnderConstruction.svelte';
+  import ArticleLayout from '$lib/components/ArticleLayout.svelte';
+  import Content from './Content.svx';
 </script>
 
-<UnderConstruction />
+<ArticleLayout breadcrumbs={[{ href: '/', label: 'ffloyd.space' }]}>
+  <Content />
+</ArticleLayout>

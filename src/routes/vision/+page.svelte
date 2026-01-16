@@ -1,7 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import PageWithSidebar from '$lib/components/PageWithSidebar.svelte';
-  import type { pathString } from '$lib/types';
+  import type { PathString } from '$lib/types';
 </script>
 
 <PageWithSidebar>
@@ -27,7 +27,7 @@
 
   {#snippet content()}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      {#snippet card(title: string, catchPhrase: string, link: pathString)}
+      {#snippet card(title: string, catchPhrase: string, link: PathString)}
         <div
           class="flex flex-col py-20 items-center justify-center border border-line-border rounded-lg p-4"
         >

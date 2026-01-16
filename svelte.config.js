@@ -10,7 +10,7 @@ const config = {
     vitePreprocess(),
     mdsvex({
       layout: {
-        vision: import.meta.dirname + '/src/routes/vision/ArticleLayout.svelte'
+        vision: import.meta.dirname + '/src/routes/vision/SvxLayout.svelte'
       }
     })
   ],

@@ -6,21 +6,26 @@
 
 ### 1. Semantic Color System
 
-White-on-black with semantic meaning encoded in opacity. All colors use OKLAB color space mixing for perceptually uniform appearance.
+White-on-black with semantic meaning encoded in **OKLab mix ratios** (not transparency). Tokens are defined by mixing `--color-ink` into `--color-surface` using `color-mix(in oklab, ...)` for perceptually uniform steps.
+
+**Base colors:**
+
+- `--color-surface` — Background surface (black)
+- `--color-ink` — Foreground ink (white)
 
 **Line colors:**
 
-- `line-border` (10%) — Card/container borders
-- `line-separator` (20%) — HR lines, table borders, content dividers
+- `line-border` — Card/container borders
+- `line-separator` — HR lines, table borders, content dividers
 
 **Content colors:**
 
-- `content-default` (50%) — Default body text
-- `content-reading` (60%) — Prose, comfortable reading
-- `content-emphasis` (70%) — Bold text, emphasis
-- `content-primary` (80%) — Headings, links, important elements
-- `content-accent` (90%) — Primary navigation
-- `content-active` (100%) — Hover/active/selected states
+- `content-default` — Default body text
+- `content-reading` — Prose, comfortable reading
+- `content-emphasis` — Bold text, emphasis
+- `content-primary` — Headings, links, important elements
+- `content-accent` — Primary navigation
+- `content-active` — Hover/active/selected states
 
 **References:** `layout.css`, `PageWithSidebar.svelte`, `+page.svelte`, `vision/+page.svelte`
 
@@ -28,7 +33,13 @@ White-on-black with semantic meaning encoded in opacity. All colors use OKLAB co
 
 Signature interactive feedback system: normal state → hover adds `content-active + text-glow-active`
 
-Two utilities: `text-glow-active` (full intensity, interactive states) and `text-glow-emphasis` (50% intensity, headings). Future: `text-glow-happy`, `text-glow-danger`, etc.
+Glow utilities:
+
+- `text-glow-active` — interactive glow (uses `content-active` at reduced intensity)
+- `text-glow-emphasis` — heading glow (uses `content-emphasis` at reduced intensity)
+- `text-glow-happy` — warm accent glow (currently `orange-200`)
+
+Future: `text-glow-danger`, etc.
 
 **References:** `layout.css`, `+page.svelte`
 

@@ -4,5 +4,5 @@
 </script>
 
 <ScreenCenter>
-  <a class="central-title cursor-default" href={resolve('/')}> under construction </a>
+  <a class="central-title" href={resolve('/')}> under construction </a>
 </ScreenCenter>
