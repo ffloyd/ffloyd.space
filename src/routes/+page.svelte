@@ -31,10 +31,7 @@
 {#snippet link(title: string, to: Link, index: number, topText: string)}
   <a
     href={resolve(to)}
-    class={[
-      'link text-lg',
-      highlightedLinkIndex === index && 'text-content-active! text-glow-active!'
-    ]}
+    class={['link text-lg', highlightedLinkIndex === index && 'text-content-active! text-glow!']}
     onfocus={() => setTopText(topText)}
     onblur={() => clearTopText()}
     onmouseenter={() => setTopText(topText)}

@@ -1,88 +1,21 @@
 # Style Guide
 
-**"Space Terminal"** aesthetic — monochromatic, glow-enhanced, developer-focused design.
+The main source of truth for the design language is `src/routes/layout.css`.
+Tailwind v4 and modern CSS features is used to reduce cognitive complexity of the design language.
+Support for old browsers is not a priority.
 
-## What Makes This Design Unique
+To improve readablity it's advised to use utility and component classes for common patterns with semantic naming instead of raw utility classes (like Tailwind advises by default).
 
-### 1. Semantic Color System
+When adjusting the visual language, update `src/routes/layout.css` first, then keep usages across components consistent with those semantics.
 
-White-on-black with semantic meaning encoded in **OKLab mix ratios** (not transparency). Tokens are defined by mixing `--color-ink` into `--color-surface` using `color-mix(in oklab, ...)` for perceptually uniform steps.
+Important part is Tailwind Typography plugin configuration and adjustments that is essential for articles perception.
 
-**Base colors:**
+## Default dark theme
 
-- `--color-surface` — Background surface (black)
-- `--color-ink` — Foreground ink (white)
+**"Space Terminal"** aesthetic — mostly monochromatic, glow-enhanced interactions, minimalistic, with emotional-based non-monochromatic highlights.
 
-**Line colors:**
+## References
 
-- `line-border` — Card/container borders
-- `line-separator` — HR lines, table borders, content dividers
+There's a list of articles that helped me to form the current design language and approach:
 
-**Content colors:**
-
-- `content-default` — Default body text
-- `content-reading` — Prose, comfortable reading
-- `content-emphasis` — Bold text, emphasis
-- `content-primary` — Headings, links, important elements
-- `content-accent` — Primary navigation
-- `content-active` — Hover/active/selected states
-
-**References:** `layout.css`, `PageWithSidebar.svelte`, `+page.svelte`, `vision/+page.svelte`
-
-### 2. Text Glow Effects
-
-Signature interactive feedback system: normal state → hover adds `content-active + text-glow-active`
-
-Glow utilities:
-
-- `text-glow-active` — interactive glow (uses `content-active` at reduced intensity)
-- `text-glow-emphasis` — heading glow (uses `content-emphasis` at reduced intensity)
-- `text-glow-happy` — warm accent glow (currently `orange-200`)
-
-Future: `text-glow-danger`, etc.
-
-**References:** `layout.css`, `+page.svelte`
-
-### 3. Iosevka Typography
-
-- **Sans:** `Iosevka Etoile` (body, UI)
-- **Mono:** `Iosevka` (code)
-
-Cards use `py-20` for generous breathing room.
-
-**References:** `layout.css`, `+page.svelte`, `vision/+page.svelte`
-
----
-
-## Component Patterns
-
-### Link Utilities
-
-- `.link` — Forward navigation (deeper into content). Base: `text-content-accent`, hover: `text-content-active + text-glow-active`
-- `.link-back` — Backward navigation (breadcrumbs, "back to X"). Base: `text-content-primary`, hover: `text-content-active` (no glow)
-
-**Example:** `<a href="/deeper" class="link">Explore</a>`
-
-**References:** `layout.css`, `+page.svelte`, `vision/+page.svelte`
-
-### Card Pattern
-
-`py-20` for generous padding, `border-line-border` for subtle outlines.
-
-**Example:** `class="py-20 border border-line-border rounded-lg"`
-
-**References:** `vision/+page.svelte`
-
-### Article Prose
-
-`.article` class applies `prose` with custom color theme, responsive sizing, and glowing headings.
-
-**References:** `layout.css`, `.svx` files
-
-### Layout Patterns
-
-- **PageWithSidebar** — Two-column responsive layout (sidebar/content). Sidebar converts to top section on mobile with border transitions (`border-b` → `border-r`).
-- **ArticleLayout** — Breadcrumb navigation + centered prose. For mdsvex articles (`.svx` files with `layout: vision` frontmatter).
-- **Breadcrumb pattern** — `ffloyd.space / section` using `.link-back` with `/` separator. Visually separates navigation from content.
-
-**References:** `PageWithSidebar.svelte`, `ArticleLayout.svelte`
+- [About color spaces and perceptual uniformity](https://ericportis.com/posts/2024/okay-color-spaces/) - historical overview of color spaces, way to perceptual uniformity and challenges of color representation. Cool interactive examples. Has a lot of links if you want to dive deeper. It explains why OKLCH is used in my design language.

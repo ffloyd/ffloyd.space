@@ -9,10 +9,10 @@
     <a href={resolve('/')} class="link-back text-2xl">ffloyd.space</a>
 
     <p class="text-lg text-left">
-      <span class="text-content-primary">Great</span> things are rarely built coincidentally. Your
-      <span class="text-content-primary">vision</span>
-      shapes what you will get in the <span class="text-content-primary">future</span>. Here you can
-      find my <span class="text-content-primary">hard opinions about software development</span>.
+      <b class="text-content-primary">Great</b> things are rarely built coincidentally. Your
+      <b class="text-content-primary">vision</b>
+      shapes what you will get in the <b class="text-content-primary">future</b>. Here you can find
+      my <b class="text-content-primary">hard opinions about software development</b>.
     </p>
 
     <p class="text-lg text-left">World is changing. We're changing. This page is also changing.</p>
@@ -34,7 +34,7 @@
           <a href={resolve(link)} class="link text-center text-2xl">{title}</a>
 
           {#if catchPhrase}
-            <p class="text-center mt-2">{catchPhrase}</p>
+            <p class="text-center text-content-dim mt-2">{catchPhrase}</p>
           {/if}
         </div>
       {/snippet}

@@ -11,116 +11,100 @@
     'Segoe UI Symbol', 'Noto Color Emoji';
   --font-mono: 'Iosevka', ui-monospace, monospace;
 
+  /*
+  Semantic color system.
+
+  Derives the palette from the base colors using OKLCH mixing.
+  This keeps steps perceptually consistent and makes it safe to experiment with different base colors later.
+
+  Avoid opacity-driven palettes because translucency does not work well as solution to mixing colors.
+  Use real semi-transparency only when the design needs actual see-through surfaces.
+  */
   --color-surface: #000;
   --color-ink: #fff;
+  --color-light: #fff;
 
-  --color-line-border: color-mix(in oklab,
-      var(--color-ink) 25%,
-      var(--color-surface));
-  /* was 10% + transparent */
+  /* A warmer variant used for occasional "happy" emphasis in reading contexts. */
+  --color-ink-happy: #fff8dc;
 
-  --color-line-separator: color-mix(in oklab,
-      var(--color-ink) 40%,
-      var(--color-surface));
-  /* was 20% + transparent */
+  --color-line-border: color-mix(in oklch, var(--color-ink) 30%, var(--color-surface));
+  --color-line-separator: color-mix(in oklch, var(--color-ink) 45%, var(--color-surface));
 
-  --color-content-default: color-mix(in oklab,
-      var(--color-ink) 60%,
-      var(--color-surface));
-  /* was 50% + transparent */
+  --color-content-dim: color-mix(in oklch, var(--color-ink) 65%, var(--color-surface));
 
-  --color-content-reading: color-mix(in oklab,
-      var(--color-ink) 70%,
-      var(--color-surface));
-  /* was 60% + transparent */
+  --color-content-reading: color-mix(in oklch, var(--color-ink) 75%, var(--color-surface));
+  --color-content-reading-happy: color-mix(
+    in oklch,
+    var(--color-ink-happy) 75%,
+    var(--color-surface)
+  );
 
-  --color-content-emphasis: color-mix(in oklab,
-      var(--color-ink) 75%,
-      var(--color-surface));
-  /* was 70% + transparent */
-
-  --color-content-primary: color-mix(in oklab,
-      var(--color-ink) 80%,
-      var(--color-surface));
-  /* was 80% + transparent */
-
-  --color-content-accent: color-mix(in oklab,
-      var(--color-ink) 90%,
-      var(--color-surface));
-  /* was 90% + transparent */
-
+  --color-content-primary: color-mix(in oklch, var(--color-ink) 85%, var(--color-surface));
+  --color-content-accent: color-mix(in oklch, var(--color-ink) 95%, var(--color-surface));
   --color-content-active: var(--color-ink);
 }
 
-@utility text-glow-active {
-  @apply text-shadow-[0_0_20px] text-shadow-content-active/80;
+/*
+Glow is the signature interaction feedback.
+
+Do not use as static effect cause it makes users to suspect that their vision is blurry. 
+It's uncomfortable feeling.
+
+Use for hover/focus/active states on interactive elements.
+*/
+@utility text-glow {
+  @apply text-shadow-[0_0_20px] text-shadow-light;
 }
 
-@utility text-glow-emphasis {
-  @apply text-shadow-[0_0_20px] text-shadow-content-emphasis/80;
-}
-
-@utility text-glow-happy {
-  @apply text-shadow-[0_0_20px] text-shadow-orange-200;
-}
-
+/*
+Tailwind typography theme for long reading.
+*/
 @utility prose-space {
   --tw-prose-body: var(--color-content-reading);
   --tw-prose-headings: var(--color-content-primary);
-  --tw-prose-lead: color-mix(in oklab,
-      var(--color-ink) 55%,
-      var(--color-surface));
-  /* was 40% + transparent */
+  --tw-prose-lead: color-mix(in oklch, var(--color-ink) 55%, var(--color-surface));
   --tw-prose-links: var(--color-content-primary);
-  --tw-prose-bold: var(--color-content-emphasis);
-  --tw-prose-counters: color-mix(in oklab,
-      var(--color-ink) 55%,
-      var(--color-surface));
-  /* was 40% + transparent */
-  --tw-prose-bullets: color-mix(in oklab,
-      var(--color-ink) 55%,
-      var(--color-surface));
-  /* was 40% + transparent */
+  --tw-prose-bold: var(--color-content-primary);
+  --tw-prose-counters: color-mix(in oklch, var(--color-ink) 55%, var(--color-surface));
+  --tw-prose-bullets: color-mix(in oklch, var(--color-ink) 55%, var(--color-surface));
   --tw-prose-hr: var(--color-line-separator);
   --tw-prose-quotes: var(--color-content-primary);
   --tw-prose-quote-borders: var(--color-line-separator);
-  --tw-prose-captions: color-mix(in oklab,
-      var(--color-ink) 55%,
-      var(--color-surface));
-  /* was 40% + transparent */
+  --tw-prose-captions: color-mix(in oklch, var(--color-ink) 55%, var(--color-surface));
   --tw-prose-kbd: var(--color-content-primary);
   --tw-prose-kbd-shadows: var(--color-line-border);
   --tw-prose-code: var(--color-content-primary);
   --tw-prose-pre-code: var(--color-content-reading);
   --tw-prose-pre-bg: var(--color-surface);
-  /* was black 50% + transparent */
-  --tw-prose-th-borders: color-mix(in oklab,
-      var(--color-ink) 55%,
-      var(--color-surface));
-  /* was 40% + transparent */
+  --tw-prose-th-borders: color-mix(in oklch, var(--color-ink) 55%, var(--color-surface));
   --tw-prose-td-borders: var(--color-line-separator);
 }
 
 @layer components {
+  /*
+  `prose-space` class above is not enough to define signature look-and-feel.
+  */
   .article {
-    /* Use typography plugin with customizations */
     @apply prose prose-space max-sm:prose-sm;
 
     /* Level 1 heading. Expected to be only one in the beginning of article. */
-    @apply prose-h1:text-center prose-h1:text-glow-emphasis;
+    @apply prose-h1:text-center;
 
-    /* Links. Looks slightly different than naviagational links. It's intentional. Think of them as a separate type of links. */
+    /* Links intentionally differ from navigation link styling. */
     @apply prose-a:decoration-line-separator prose-a:decoration-2 prose-a:underline-offset-4;
-    @apply prose-a:transition-all prose-a:duration-200 prose-a:hover:text-content-active prose-a:hover:text-glow-active;
+    @apply prose-a:hover:text-content-active prose-a:hover:text-glow;
+    @apply prose-a:transition-all prose-a:duration-200;
   }
 
+  /* Primary navigational link. */
   .link {
     @apply text-content-accent;
-    @apply hover:text-content-active hover:text-glow-active;
-    @apply active:text-content-active active:text-glow-active;
+    @apply hover:text-content-active hover:text-glow;
+    @apply active:text-content-active active:text-glow;
     @apply transition-all duration-200;
   }
 
+  /* Secondary/back navigational link. No glow by design. */
   .link-back {
     @apply text-content-primary;
     @apply hover:text-content-active;
@@ -138,6 +122,6 @@
 
 @layer base {
   body {
-    @apply bg-black text-content-default;
+    @apply bg-surface text-content-reading;
   }
 }
