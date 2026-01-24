@@ -69,6 +69,11 @@
         "It's totally insane that we used to it.",
         '/vision/context-switching'
       )}
+      <!-- {@render card( -->
+      <!--   'AI must not make decisions', -->
+      <!--   "If you offload your decision-making to AI - you're f*cked.", -->
+      <!--   '/vision/ai-must-not-make-decisions' -->
+      <!-- )} -->
     </div>
   {/snippet}
 </PageWithSidebar>

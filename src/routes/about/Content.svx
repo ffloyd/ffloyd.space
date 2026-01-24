@@ -11,3 +11,5 @@ A collection of achievements.
 Articles here are bound to the time they were written and usually are not updated later.
 
 [Vision](/vision) is about the _present-to-future_ direction — this section was the main reason to create this website. I accepted the challenge of forming a philosophy, terminology, approaches — whatever I can — to lay a path to a future where software engineering is more <span class="text-content-reading-happy">human-centric</span>, and where "burnout" is no longer a common thing.
+
+TBD: humanising approach definition and focus on you, your colleagues, youtr customers.

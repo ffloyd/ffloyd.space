@@ -3,8 +3,78 @@ layout: vision
 ---
 # Always Reduce Cognitive Complexity
 
-Human working memory can hold approximately 4-7 items simultaneously. This is not a guideline, it is a biological constraint. Yet we often write code that requires tracking dozens of concepts at once.
+**Cognitive complexity** is not about lines of code or cyclomatic complexity.
+It is about how many things you need to keep in your head to understand what the code does.
+No automated tool can properly measure it for you.
 
-**Cognitive complexity** is not about lines of code or cyclomatic complexity. It is about how many things you need to keep in your head to understand what the code does.
+Our brain can effectively manage only a limited number of concepts at once.
+To be precise, it's 4±1 concepts.
+But even if it were 7 or 20 the thing is that _there is a limit_.
 
-Every variable, every condition, every abstraction adds to the cognitive load. When this load exceeds our mental capacity, bugs appear and understanding breaks down.
+Obviously, big systems require more than 4 concepts.
+And the goal is not to reduce to 4 or less, but to structure them appropriately:
+
+> Structure the system in a way that at any moment you need to keep in your mind only small number of concepts in order to make high quality decisions.
+
+You may argue: "but I have moments when I feel like I can handle much more than 4 concepts at once!"
+This happens when you work with a familiar system that you've already _internalized_.
+Roughly speaking, your subconscious is in sync with the external entity you're working with.
+
+Every engineer has written code that's nothing to be proud of.
+But in the middle of writing your "spaghetti" code, you probably had moments when you felt that you perfectly understand what you're doing.
+This is that _synchronization_ I'm talking about.
+
+_Properly designed systems allow you to reach this state faster and with less effort._
+Bad design means that even its creator cannot reach this state (or even never reached it at all).
+
+Next thought can be: "ok, simple systems are easy to understand, it's obvious, what's the point?"
+The point is:
+
+## Optimize for the process of understanding
+
+_We write code not for computers, we write code for humans._
+For other people who can be very different from you.
+Computers do not care about code quality, they just execute it.
+Programming languages (like natural languages and also math) are tools for communication _between people_.
+It can be harsh, but if your code is not comprehensible for your colleagues, it's bad code.
+No matter how clever it is.
+
+__When you load a new system into your subconscious, you do it through the window of those 4 simultaneous concepts.__
+This is unavoidable bottleneck.
+If something is clear for you as an author and you see beauty of your design, it doesn't mean that it's easy to understand for others.
+Think of understanding like CPU cache usage: if your working set fits in L1 cache, performance is great.
+If you constanly need to get data from RAM or even disk - performance are going to be much worse.
+Similarly, if you can keep all important concepts in mind during the learning process, understanding becomes more effective.
+Always question yourself:
+
+> What is the effort for a new person to understand this?
+
+It's applicable to almost anything: from a single line of code to the whole codebase.
+Ask your colleagues to review your code and documentation from this perspective.
+This is _the only way_ to validate that you succeed.
+
+Many systems are complex.
+And often you have no power to make them simpler.
+The more realistic goal is to structure them in a more approachable way.
+
+Last, but not least:
+
+> Consider your audience.
+
+Throwing complex mathematical concepts at an engineer who hasn't used advanced math in years is ignorance, not a demonstration of your skill.
+It doesn't mean that you should not use advanced concepts.
+You should, it's your advantage as an experienced engineer.
+Just do an extra effort to explain them in a way that your audience can understand.
+Explaining complex concepts simply is a sign of true mastery.
+
+## Hide unrelated complexity
+
+TBD
+
+## Stabilize domain language
+
+TBD
+
+## Math is about simplifications
+
+TBD
