@@ -1,6 +1,7 @@
 ---
-layout: vision
+layout: Vision
 ---
+
 # Always Reduce Cognitive Complexity
 
 **Cognitive complexity** is not about the amount of code in the project.
@@ -57,7 +58,7 @@ Programming languages (like natural languages and also math) are tools for commu
 It can be harsh, but if your code is not comprehensible for your colleagues, it's bad code.
 No matter how clever it is.
 
-__When you load a new system into your subconscious, you do it through the window of those 4 simultaneous concepts.__
+**When you load a new system into your subconscious, you do it through the window of those 4 simultaneous concepts.**
 This is an unavoidable bottleneck.
 If something is clear for you as an author and you see the beauty of your design, it doesn't mean that it's easy to understand for others.
 Think of understanding like CPU cache usage: if your working set fits in L1 cache, performance is great.

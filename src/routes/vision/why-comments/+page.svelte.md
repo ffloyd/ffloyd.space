@@ -1,11 +1,13 @@
 ---
-layout: vision
+layout: Vision
 ---
+
 # Why-Comments Are Good
 
 The mantra "good code does not need comments" has been repeated so many times that it became dogma. But this is fundamentally wrong. Good code needs good comments, just not the ones that explain _what_ the code does.
 
 **Why-comments** explain the reasoning behind decisions. They answer questions like:
+
 - Why did we choose this approach over alternatives?
 - Why does this edge case exist?
 - Why is this optimization necessary?

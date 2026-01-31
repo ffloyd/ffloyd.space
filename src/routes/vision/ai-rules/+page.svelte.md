@@ -1,6 +1,7 @@
 ---
-layout: vision
+layout: Vision
 ---
+
 # AI Rules Files Must Be Useless for Humans
 
 The rise of AI coding assistants introduced files like `AGENTS.md`, `.cursorrules`, and similar. These files tell AI how to work with your codebase. But here is the question: why should these files exist at all?
@@ -8,6 +9,7 @@ The rise of AI coding assistants introduced files like `AGENTS.md`, `.cursorrule
 If your codebase needs special instructions for AI, it probably needs better documentation for humans too. The difference is that humans tolerate poor documentation, while AI needs explicit rules.
 
 **The right approach:**
+
 - Write comprehensive READMEs for humans
 - Add clear comments explaining the "why"
 - Document architecture decisions

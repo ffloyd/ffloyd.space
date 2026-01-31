@@ -1,11 +1,13 @@
 ---
-layout: vision
+layout: Vision
 ---
+
 # Context-Switching Is a Plague
 
 Every time you switch between tasks, your brain needs time to fully engage with the new context. Research shows it takes 15-25 minutes to fully restore deep focus after an interruption. Yet modern work culture normalizes constant context-switching.
 
 We jump between:
+
 - Multiple projects
 - Different communication channels
 - Unrelated meetings

@@ -1,11 +1,12 @@
 ---
-layout: vision
+layout: Vision
 ---
+
 # Broken Windows Theory Works
 
 The "broken windows theory" suggests that visible signs of disorder and neglect in an
 environment encourage further disorder and neglect. This concept can be _applied to software
-development_, particularly in the __context of code quality__ and technical debt.
+development_, particularly in the **context of code quality** and technical debt.
 
 The theory posits that if a broken window in a building is left
 unrepaired, it signals to others that no one cares about the property, leading to more

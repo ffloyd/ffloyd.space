@@ -2,6 +2,9 @@
 
 Do NOT use `npm`. The project uses `bun`. Check README.md for commands.
 
+Do not use JavaScript, always prefer TypeScript.
+JavaScript is ok only if JavaScript usage simplifies things significatly: for example, root files like svelte.config.js or eslint.config.js requires additial configurations in order to convert them to TypeScript, so it's simpler to keep them as JS files.
+
 ## Svelte 5 MCP Tools:
 
 You are able to use the Svelte MCP server, where you have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:

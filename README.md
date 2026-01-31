@@ -21,4 +21,4 @@ Use the following commands for development:
 Instead of using some CMS or blog-posting tool like Hugo, I want more flexibility and preferred to use:
 
 - Svelte / SvelteKit as a runtime to not lock-in in static pages only. I can do interactive things more easily if needed.
-- Markdown for writing posts, as it's simple and widely supported. `mdsvex` is used to be able to have Markdown as a natural part of the codebase and being able to mix Svelte components in it.
+- Markdown for writing posts, as it's simple and widely supported. A custom Markdown preprocessor is used to have Markdown as a natural part of the codebase and be able to mix Svelte components in it.
