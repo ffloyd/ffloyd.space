@@ -1,5 +1,6 @@
 ---
 layout: Vision
+description: What you did today will repeat itself multiple times in the future. Ugly code acts like infection. Introduce tech-debt in the cleanest way possible.
 ---
 
 # Broken Windows Theory Works

@@ -1,5 +1,6 @@
 ---
 layout: Vision
+description: '"Good code does not need comments" is the second "billion dollar mistake" after invetion of `nil`. We used to put explanations in all possible places except the related code line.'
 ---
 
 # Why-Comments Are Good

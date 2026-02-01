@@ -8,17 +8,20 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 
 import remarkEmotionalHighlighting from './emotional-highlighting.ts';
-import { remarkParseFrontmatterContent, rehypeApplyLayout } from './frontmatter.ts';
+import remarkParseFrontmatter from './remark-parse-frontmatter.ts';
+import rehypeApplyLayout from './rehype-apply-layout.ts';
+import rehypeSvelteHead from './rehype-svelte-head.ts';
 
 async function md2svelte(markdown: string): Promise<string> {
   const parsed = await unified()
     .use(remarkParse)
     .use(remarkDirective)
     .use(remarkFrontmatter)
-    .use(remarkParseFrontmatterContent)
+    .use(remarkParseFrontmatter)
     .use(remarkEmotionalHighlighting)
     .use(remarkRehype)
     .use(rehypeApplyLayout)
+    .use(rehypeSvelteHead)
     .use(rehypeStringify)
     .process(markdown);
 

@@ -1,5 +1,6 @@
 ---
 layout: Vision
+description: Why we should care about LLMs' convenience more than about ours? Add more READMEs and comments for humans, and you find your AGENTS.md containing only AI-specific adjustments.
 ---
 
 # AI Rules Files Must Be Useless for Humans

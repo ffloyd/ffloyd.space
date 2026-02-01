@@ -1,5 +1,6 @@
 ---
 layout: Vision
+description: It's easier to deal with 5 combined concepts that provide solution for 50 problems, than with 50 solutions for 50 problems.
 ---
 
 # Design Systems, Not Solutions
