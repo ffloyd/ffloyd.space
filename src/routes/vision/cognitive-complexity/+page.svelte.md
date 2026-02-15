@@ -3,7 +3,7 @@ layout: Vision
 description: Design code for the process of understanding. Humans can deal only with ~4 ideas simultaneously. Reduce amount of involved ideas to a minimum.
 ---
 
-# Always Reduce Cognitive Complexity
+# Design Cognitive Complexity
 
 **Cognitive complexity** is not about the amount of code in the project.
 It is about how many things you need to keep in your head to understand the system.

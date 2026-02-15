@@ -55,7 +55,7 @@
         '/vision/design-systems-not-solutions'
       )}
       {@render card(
-        'Always reduce cognitive complexity',
+        'Design cognitive complexity',
         'Design code for the process of understanding. Humans can deal only with ~4 ideas simultaneously. Reduce amount of involved ideas to a minimum.',
         '/vision/cognitive-complexity'
       )}
