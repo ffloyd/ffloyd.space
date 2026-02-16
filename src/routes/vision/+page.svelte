@@ -50,7 +50,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {#snippet card(title: string, catchPhrase: string, link: string)}
         <div
-          class="flex flex-col py-20 items-center justify-center border border-line-border rounded-lg p-4"
+          class="flex flex-col py-20 items-center justify-start border border-line-border rounded-lg p-4"
         >
           <a href={resolve(link as '/')} class="link text-center text-2xl">{title}</a>
 
