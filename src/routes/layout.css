@@ -28,6 +28,7 @@
   --color-ink-happy: #fff8dc;
 
   --color-line-border: color-mix(in oklch, var(--color-ink) 30%, var(--color-surface));
+  --color-line-border: color-mix(in oklch, var(--color-ink) 30%, var(--color-surface));
   --color-line-separator: color-mix(in oklch, var(--color-ink) 45%, var(--color-surface));
 
   --color-content-dim: color-mix(in oklch, var(--color-ink) 65%, var(--color-surface));
@@ -85,13 +86,13 @@ Tailwind typography theme for long reading.
   `prose-space` class above is not enough to define signature look-and-feel.
   */
   .article {
-    @apply prose prose-space max-sm:prose-sm;
+    @apply prose prose-space;
 
     /* Level 1 heading. Expected to be only one in the beginning of article. */
     @apply prose-h1:text-center;
 
     /* Links intentionally differ from navigation link styling. */
-    @apply prose-a:decoration-line-separator prose-a:decoration-2 prose-a:underline-offset-4;
+    @apply prose-a:decoration-line-border prose-a:underline-offset-4;
     @apply prose-a:hover:text-content-active prose-a:hover:text-glow;
     @apply prose-a:transition-all prose-a:duration-200;
   }

@@ -13,7 +13,7 @@
     <Breadcrumbs items={breadcrumbs} />
   </div>
 
-  <article class="flex-1 article mx-auto max-sm:px-4">
+  <article class="flex-1 article mx-auto px-4">
     {@render children()}
   </article>
 </div>

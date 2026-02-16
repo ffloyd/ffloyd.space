@@ -2,6 +2,8 @@
   import { resolve } from '$app/paths';
   import PageWithSidebar from '$lib/components/PageWithSidebar.svelte';
 
+  import Intro from './Intro.svelte.md';
+
   // No need to use runes here because it's a compile-time thing
   const articlePagesMap = import.meta.glob<{ title: string; description: string }>('./*/*.md', {
     eager: true
@@ -28,22 +30,9 @@
   {#snippet sidebar()}
     <a href={resolve('/')} class="link-back text-2xl">ffloyd.space</a>
 
-    <!-- TODO: consider use article/typography here and extract it into svelte.md file -->
-    <p class="text-lg text-left">
-      <b class="text-content-primary">Great</b> things are rarely built coincidentally. Your
-      <b class="text-content-primary">vision</b>
-      shapes what you will get in the <b class="text-content-primary">future</b>. Here you can find
-      my <b class="text-content-primary">hard opinions about software development</b>.
-    </p>
-
-    <p class="text-lg text-left">World is changing. We're changing. This page is also changing.</p>
-
-    <p class="text-lg text-left">
-      Want to discuss or share something? Write to <a
-        href="mailto:actually@ffloyd.space"
-        class="link">actually@ffloyd.space</a
-      >
-    </p>
+    <div class="article">
+      <Intro />
+    </div>
   {/snippet}
 
   {#snippet content()}

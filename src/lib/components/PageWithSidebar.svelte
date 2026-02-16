@@ -12,7 +12,7 @@
 <!-- 2 column layout on sm+ screens -->
 <div class="flex flex-col md:flex-row p-4 gap-4 min-h-dvh">
   <aside
-    class="flex flex-1 flex-col gap-4 items-center md:max-w-sm pr-4 pb-4 max-md:border-b md:border-r border-line-separator"
+    class="flex flex-1 flex-col items-center md:max-w-sm pr-4 pb-4 max-md:border-b md:border-r border-line-separator"
   >
     {@render sidebar()}
   </aside>
