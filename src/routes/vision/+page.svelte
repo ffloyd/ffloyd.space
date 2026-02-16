@@ -8,11 +8,13 @@
     eager: true
   });
 
-  const articleList = Object.entries(articlePagesMap).map(([key, module]) => ({
-    path: `/vision/${key.split('/')[1]}` as PathString,
-    title: module.title,
-    description: module.description
-  }));
+  const articleList = Object.entries(articlePagesMap)
+    .map(([key, module]) => ({
+      path: `/vision/${key.split('/')[1]}` as PathString,
+      title: module.title,
+      description: module.description
+    }))
+    .sort((a, b) => a.title.localeCompare(b.title));
 </script>
 
 <PageWithSidebar>
