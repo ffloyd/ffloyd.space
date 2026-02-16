@@ -1,10 +1,8 @@
 <script module lang="ts">
-  import type { PathString } from '$lib/types';
-
   export type TimelineItem = {
     date: string;
     title: string;
-    href: PathString;
+    href: string;
     description: string;
   };
 </script>

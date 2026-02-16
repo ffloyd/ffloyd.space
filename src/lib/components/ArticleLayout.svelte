@@ -1,6 +1,5 @@
 <script lang="ts">
-  import Breadcrumbs from './Breadcrumbs.svelte';
-  import type { BreadcrumbItems } from '$lib/types';
+  import Breadcrumbs, { type BreadcrumbItems } from './Breadcrumbs.svelte';
   import type { Snippet } from 'svelte';
 
   let { children, breadcrumbs } = $props<{

@@ -1,7 +1,6 @@
 import type { Plugin } from 'unified';
 import type { Root as HRoot } from 'hast';
 import { h } from 'hastscript';
-import './remark-parse-frontmatter.ts';
 
 /**
  * Rehype plugin that wraps content in a layout component based on frontmatter.

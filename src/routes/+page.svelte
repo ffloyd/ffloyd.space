@@ -3,8 +3,6 @@
   import ScreenCenter from '$lib/components/ScreenCenter.svelte';
   import { settled, tick } from 'svelte';
 
-  type Link = Parameters<typeof resolve>[0];
-
   let topText = $state('');
   let highlightedLinkIndex = $state<number | null>(null);
 
@@ -28,9 +26,9 @@
   }
 </script>
 
-{#snippet link(title: string, to: Link, index: number, topText: string)}
+{#snippet link(title: string, to: string, index: number, topText: string)}
   <a
-    href={resolve(to)}
+    href={resolve(to as '/')}
     class={['link text-lg', highlightedLinkIndex === index && 'text-content-active! text-glow!']}
     onfocus={() => setTopText(topText)}
     onblur={() => clearTopText()}

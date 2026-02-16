@@ -2,11 +2,6 @@ import type { Plugin } from 'unified';
 import type { Root as MDRoot } from 'mdast';
 import YAML from 'yaml';
 
-export interface Frontmatter {
-  layout?: string;
-  description?: string;
-}
-
 /**
  * Remark plugin that parses YAML frontmatter and stores it in vfile data.
  *
@@ -18,7 +13,7 @@ const remarkParseFrontmatter: Plugin<[], MDRoot> = () => {
     if (tree.children[0]?.type !== 'yaml') return;
 
     const rawFrontmatter = tree.children[0].value;
-    const frontmatter = YAML.parse(rawFrontmatter) as Frontmatter;
+    const frontmatter = YAML.parse(rawFrontmatter);
 
     file.data.frontmatter = frontmatter;
   };

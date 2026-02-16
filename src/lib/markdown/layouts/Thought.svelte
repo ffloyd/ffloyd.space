@@ -4,7 +4,7 @@
 
   const breadcrumbs: BreadcrumbItems = [
     { href: '/', label: 'ffloyd.space' },
-    { href: '/vision', label: 'vision' }
+    { href: '/thoughts', label: 'thoughts' }
   ];
 
   let { children } = $props();

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import PageWithSidebar from '$lib/components/PageWithSidebar.svelte';
-  import type { PathString } from '$lib/types';
 
   // No need to use runes here because it's a compile-time thing
   const articlePagesMap = import.meta.glob<{ title: string; description: string }>('./*/*.md', {
@@ -10,17 +9,26 @@
 
   const articleList = Object.entries(articlePagesMap)
     .map(([key, module]) => ({
-      path: `/vision/${key.split('/')[1]}` as PathString,
+      path: `/vision/${key.split('/')[1]}`,
       title: module.title,
       description: module.description
     }))
     .sort((a, b) => a.title.localeCompare(b.title));
 </script>
 
+<svelte:head>
+  <title>Vision ⋄ ffloyd.space</title>
+  <meta
+    name="description"
+    content="Great things are rarely built coincidentally. Your vision shapes what you will get in the future. Here you can find my hard opinions about software development."
+  />
+</svelte:head>
+
 <PageWithSidebar>
   {#snippet sidebar()}
     <a href={resolve('/')} class="link-back text-2xl">ffloyd.space</a>
 
+    <!-- TODO: consider use article/typography here and extract it into svelte.md file -->
     <p class="text-lg text-left">
       <b class="text-content-primary">Great</b> things are rarely built coincidentally. Your
       <b class="text-content-primary">vision</b>
@@ -40,11 +48,11 @@
 
   {#snippet content()}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      {#snippet card(title: string, catchPhrase: string, link: PathString)}
+      {#snippet card(title: string, catchPhrase: string, link: string)}
         <div
           class="flex flex-col py-20 items-center justify-center border border-line-border rounded-lg p-4"
         >
-          <a href={resolve(link)} class="link text-center text-2xl">{title}</a>
+          <a href={resolve(link as '/')} class="link text-center text-2xl">{title}</a>
 
           {#if catchPhrase}
             <p class="text-center text-content-dim mt-2">{catchPhrase}</p>

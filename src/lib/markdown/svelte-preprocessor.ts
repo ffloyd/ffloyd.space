@@ -14,6 +14,20 @@ import rehypeApplyLayout from './rehype-apply-layout.ts';
 import rehypeSvelteHead from './rehype-svelte-head.ts';
 import rehypeSvelteExports from './rehype-svelte-exports.ts';
 
+// Type override so I have files metadata properly typed.
+//
+// Due to some reasons I'm lazy to investigate,
+// if I put it in ./types.d.ts it stops workoing.
+declare module 'vfile' {
+  interface DataMap {
+    frontmatter: {
+      layout?: string;
+      description?: string;
+    };
+    title?: string;
+  }
+}
+
 async function md2svelte(markdown: string): Promise<string> {
   const parsed = await unified()
     .use(remarkParse)

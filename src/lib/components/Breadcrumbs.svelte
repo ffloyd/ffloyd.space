@@ -1,6 +1,12 @@
+<script module lang="ts">
+  export type BreadcrumbItems = {
+    href: string;
+    label: string;
+  }[];
+</script>
+
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import type { BreadcrumbItems } from '$lib/types';
 
   let { items } = $props<{ items: BreadcrumbItems }>();
 </script>
