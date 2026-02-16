@@ -2,15 +2,9 @@ import type { Plugin } from 'unified';
 import type { Root as MDRoot } from 'mdast';
 import YAML from 'yaml';
 
-interface Frontmatter {
+export interface Frontmatter {
   layout?: string;
   description?: string;
-}
-
-declare module 'vfile' {
-  interface DataMap {
-    frontmatter: Frontmatter;
-  }
 }
 
 /**

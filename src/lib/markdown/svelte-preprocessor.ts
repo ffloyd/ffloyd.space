@@ -9,8 +9,10 @@ import rehypeStringify from 'rehype-stringify';
 
 import remarkEmotionalHighlighting from './emotional-highlighting.ts';
 import remarkParseFrontmatter from './remark-parse-frontmatter.ts';
+import rehypeExtractFirstH1 from './rehype-extract-first-h1.ts';
 import rehypeApplyLayout from './rehype-apply-layout.ts';
 import rehypeSvelteHead from './rehype-svelte-head.ts';
+import rehypeSvelteExports from './rehype-svelte-exports.ts';
 
 async function md2svelte(markdown: string): Promise<string> {
   const parsed = await unified()
@@ -20,8 +22,10 @@ async function md2svelte(markdown: string): Promise<string> {
     .use(remarkParseFrontmatter)
     .use(remarkEmotionalHighlighting)
     .use(remarkRehype)
+    .use(rehypeExtractFirstH1)
     .use(rehypeApplyLayout)
     .use(rehypeSvelteHead)
+    .use(rehypeSvelteExports)
     .use(rehypeStringify)
     .process(markdown);
 
