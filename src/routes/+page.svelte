@@ -26,6 +26,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>ffloyd.space</title>
+</svelte:head>
+
 {#snippet link(title: string, to: string, index: number, topText: string)}
   <a
     href={resolve(to as '/')}
