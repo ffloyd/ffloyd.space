@@ -5,6 +5,9 @@
 declare module '*.svelte.md' {
   import type { Component } from 'svelte';
 
+  export const title: string | null;
+  export const description: string | null;
+
   const component: Component;
   export default component;
 }

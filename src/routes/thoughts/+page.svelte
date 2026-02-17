@@ -10,13 +10,18 @@
   const items: TimelineItem[] = Object.entries(articlePagesMap)
     .map(([key, module]) => {
       const slug = key.split('/')[1];
+      // YYYY-MM-DD = 10 chars
       const date = slug.slice(0, 10);
 
+      return { slug, date, ...module };
+    })
+    .filter(({ slug }) => slug[0] !== '_')
+    .map(({ slug, date, title, description }) => {
       return {
-        date,
-        title: module.title ?? 'Untitled',
         href: `/thoughts/${slug}`,
-        description: module.description ?? ''
+        date,
+        title,
+        description
       };
     })
     .sort((a, b) => b.date.localeCompare(a.date));
