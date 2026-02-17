@@ -5,6 +5,7 @@ import remarkParse from 'remark-parse';
 import remarkDirective from 'remark-directive';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkRehype from 'remark-rehype';
+import rehypeShiki from '@shikijs/rehype'
 import rehypeStringify from 'rehype-stringify';
 
 import remarkEmotionalHighlighting from './emotional-highlighting.ts';
@@ -36,6 +37,10 @@ async function md2svelte(markdown: string): Promise<string> {
     .use(remarkParseFrontmatter)
     .use(remarkEmotionalHighlighting)
     .use(remarkRehype)
+    .use(rehypeShiki, {
+      langs: ['elixir'],
+      theme: 'kanagawa-dragon'
+    })
     .use(rehypeExtractFirstH1)
     .use(rehypeApplyLayout)
     .use(rehypeSvelteHead)
