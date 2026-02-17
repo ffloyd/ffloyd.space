@@ -1,6 +1,6 @@
 ---
 layout: Vision
-description: Design code for the process of understanding. Humans can deal only with ~4 ideas simultaneously. Reduce amount of involved ideas to a minimum.
+description: Optimize code for the process of understanding. Humans can deal only with ~4 ideas simultaneously. Reduce amount of involved ideas to a necessary minimum.
 ---
 
 # Design Cognitive Complexity
