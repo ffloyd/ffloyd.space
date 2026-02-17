@@ -92,7 +92,7 @@ Tailwind typography theme for long reading.
     @apply prose-h1:text-center;
 
     /* Links intentionally differ from navigation link styling. */
-    @apply prose-a:decoration-line-border prose-a:underline-offset-4;
+    @apply prose-a:decoration-line-border prose-a:decoration-2 prose-a:underline-offset-4;
     @apply prose-a:hover:text-content-active prose-a:hover:text-glow;
     @apply prose-a:transition-all prose-a:duration-200;
   }

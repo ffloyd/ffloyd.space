@@ -11,10 +11,11 @@
 
   const articleList = Object.entries(articlePagesMap)
     .map(([key, module]) => ({
-      path: `/vision/${key.split('/')[1]}`,
+      slug: key.split('/')[1],
       title: module.title,
       description: module.description
     }))
+    .filter(({ slug }) => slug[0] !== '_')
     .sort((a, b) => a.title.localeCompare(b.title));
 </script>
 
@@ -49,8 +50,8 @@
         </div>
       {/snippet}
 
-      {#each articleList as article (article.path)}
-        {@render card(article.title, article.description, article.path)}
+      {#each articleList as article (article.slug)}
+        {@render card(article.title, article.description, `/vision/${article.slug}`)}
       {/each}
     </div>
   {/snippet}
