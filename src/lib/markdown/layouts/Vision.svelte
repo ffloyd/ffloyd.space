@@ -7,9 +7,9 @@
     { href: '/vision', label: 'vision' }
   ];
 
-  let { children } = $props();
+  let { children, mastodonPostId } = $props();
 </script>
 
-<ArticleLayout {breadcrumbs}>
+<ArticleLayout {breadcrumbs} {mastodonPostId}>
   {@render children()}
 </ArticleLayout>

@@ -1,3 +1,6 @@
+/* https://www.nerdfonts.com/cheat-sheet */
+@import 'https://www.nerdfonts.com/assets/css/webfont.css';
+
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
@@ -27,7 +30,6 @@
   /* A warmer variant used for occasional "happy" emphasis in reading contexts. */
   --color-ink-happy: #fff8dc;
 
-  --color-line-border: color-mix(in oklch, var(--color-ink) 30%, var(--color-surface));
   --color-line-border: color-mix(in oklch, var(--color-ink) 30%, var(--color-surface));
   --color-line-separator: color-mix(in oklch, var(--color-ink) 45%, var(--color-surface));
 

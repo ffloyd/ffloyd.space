@@ -11,6 +11,7 @@ import { h } from 'hastscript';
 const rehypeApplyLayout: Plugin<[], HRoot> = () => {
   return (tree, file) => {
     const layout = file.data.frontmatter?.layout;
+    const mastodonPostId = file.data.frontmatter?.post_id;
     if (!layout) return;
 
     const layoutComponent = `${layout}Layout`;
@@ -19,7 +20,7 @@ const rehypeApplyLayout: Plugin<[], HRoot> = () => {
       `import ${layoutComponent} from "$lib/markdown/layouts/${layout}.svelte";`
     ]);
 
-    const wrappedInLayout = h(layoutComponent, tree.children);
+    const wrappedInLayout = h(layoutComponent, { mastodonPostId }, tree.children);
     // `h` is convinient, but downcases tagName which breaks Svelte components
     wrappedInLayout.tagName = layoutComponent;
 

@@ -1,6 +1,7 @@
 ---
 layout: Thought
 description: I often see linters have rules to forbid TODO comments. Is it really good advice?
+post_id: '116096871892633596'
 ---
 
 # TODO Comments Are Not Bad

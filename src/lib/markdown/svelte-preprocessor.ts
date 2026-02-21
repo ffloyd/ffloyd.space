@@ -5,7 +5,7 @@ import remarkParse from 'remark-parse';
 import remarkDirective from 'remark-directive';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkRehype from 'remark-rehype';
-import rehypeShiki from '@shikijs/rehype'
+import rehypeShiki from '@shikijs/rehype';
 import rehypeStringify from 'rehype-stringify';
 
 import remarkEmotionalHighlighting from './emotional-highlighting.ts';
@@ -24,6 +24,7 @@ declare module 'vfile' {
     frontmatter: {
       layout?: string;
       description?: string;
+      post_id?: string;
     };
     title?: string;
   }
