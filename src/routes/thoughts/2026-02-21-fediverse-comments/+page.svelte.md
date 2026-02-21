@@ -1,6 +1,7 @@
 ---
 layout: Thought
 description: Have you considered Mastodon as a comments solution for your blog?
+post_id: '116110376214311954'
 ---
 
 # Fediverse Comments for Your Blog
