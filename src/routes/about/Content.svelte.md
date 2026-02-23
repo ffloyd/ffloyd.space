@@ -63,7 +63,7 @@ Only depressive ones.
 Over time I learned myself to look behind depression veil.
 And start seeing opportunities.
 
-__The second principle:__
+The next principle is:
 
 > :stoic[__You have no enemies.__]
 > :stoic[Enemies are external beings that we cannot control,]
