@@ -19,13 +19,26 @@ const remarkEmotionalHighlighting: Plugin<[], Root> = () => {
       // Text directives has :directive[content] syntax.
       if (node.type !== 'textDirective') return;
 
+      let klass: string;
+
+      switch (node.name) {
+        case 'happy':
+          klass = 'text-content-reading-happy';
+          break;
+        case 'stoic':
+          klass = 'text-content-reading-stoic';
+          break;
+        default:
+          return; // Skip unrecognized directives
+      }
+
       // Handle :happy[text] directive
-      if (node.name === 'happy') {
+      if (klass) {
         const data = node.data || (node.data = {});
 
         data.hName = 'span';
         data.hProperties = {
-          class: 'text-content-reading-happy'
+          class: klass
         };
       }
     });
