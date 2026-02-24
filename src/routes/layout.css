@@ -37,12 +37,16 @@
   --color-content-dim: color-mix(in oklch, var(--color-ink) 65%, var(--color-surface));
 
   --color-content-reading: color-mix(in oklch, var(--color-ink) 75%, var(--color-surface));
-  --color-content-reading-happy: color-mix(in oklch,
-      var(--color-ink-happy) 75%,
-      var(--color-surface));
-  --color-content-reading-stoic: color-mix(in oklch,
-      var(--color-ink-stoic) 75%,
-      var(--color-surface));
+  --color-content-reading-happy: color-mix(
+    in oklch,
+    var(--color-ink-happy) 75%,
+    var(--color-surface)
+  );
+  --color-content-reading-stoic: color-mix(
+    in oklch,
+    var(--color-ink-stoic) 75%,
+    var(--color-surface)
+  );
 
   --color-content-primary: color-mix(in oklch, var(--color-ink) 85%, var(--color-surface));
   --color-content-accent: color-mix(in oklch, var(--color-ink) 95%, var(--color-surface));
@@ -86,7 +90,6 @@ Tailwind typography theme for long reading.
 }
 
 @layer components {
-
   /*
   `prose-space` class above is not enough to define signature look-and-feel.
   */
