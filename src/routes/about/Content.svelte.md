@@ -18,7 +18,7 @@ It's better to reach me via email or Mastodon.
 
 > How your personal page would look like if you have full freedom of design and content?
 
-If this question hits you, and _especially_ if you cannot get _"what the point?"_, then I recommend [this longread about Small/Indie WEB reneissance](https://neustadt.fr/essays/the-small-web/).
+If this question hits you, and _especially_ if you cannot get _"what's the point?"_, then I recommend [this longread about Small/Indie WEB reneissance](https://neustadt.fr/essays/the-small-web/).
 
 One day an answer to this question started to take shape in my mind.
 
