@@ -1,6 +1,7 @@
 ---
 layout: Thought
 description: I want to return to this article in 1-2 years and check how good I am at predicting the future and grasping essence of emerging technologies.
+post_id: '116138308262412855'
 ---
 
 # Q1 2026: How I See AI and its Future
