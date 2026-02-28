@@ -2,6 +2,7 @@ import type { PreprocessorGroup } from 'svelte/compiler';
 
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
+import remarkGFM from 'remark-gfm';
 import remarkDirective from 'remark-directive';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkRehype from 'remark-rehype';
@@ -33,6 +34,7 @@ declare module 'vfile' {
 async function md2svelte(markdown: string): Promise<string> {
   const parsed = await unified()
     .use(remarkParse)
+    .use(remarkGFM)
     .use(remarkDirective)
     .use(remarkFrontmatter)
     .use(remarkParseFrontmatter)
