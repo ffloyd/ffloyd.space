@@ -80,9 +80,9 @@ In other words,
 
 This will pay off in many ways:
 
-- __No "LLM dependency"__ - If LLMs become too expensive, your codebase is optimized for human contribution and understanding, so you can keep decent delivery speed even without LLM. Use LLM to avoid vendor lock-in with LLMs! Isn't it a smart move in such unpredictable time?
-- __Less burnouts__ - engineers will be happy to work on a such codebase. Ask any engineer about their favorite codebase, and you'll find that it's not the one with the most features, but the one with the best documentation and code quality.
-- __Better talent attraction and retention__ - if you tell the best engineers on the market, that in your company they will have space for deep-thinking, more scientific and meticulous approach to software development, and minimal context switching, what do they do?
-- __Naturally less bugs__ - and, therefore, happy customers!
+- **No "LLM dependency"** - If LLMs become too expensive, your codebase is optimized for human contribution and understanding, so you can keep decent delivery speed even without LLM. Use LLM to avoid vendor lock-in with LLMs! Isn't it a smart move in such unpredictable time?
+- **Less burnouts** - engineers will be happy to work on a such codebase. Ask any engineer about their favorite codebase, and you'll find that it's not the one with the most features, but the one with the best documentation and code quality.
+- **Better talent attraction and retention** - if you tell the best engineers on the market, that in your company they will have space for deep-thinking, more scientific and meticulous approach to software development, and minimal context switching, what do they do?
+- **Naturally less bugs** - and, therefore, happy customers!
 
 :happy[Optimize for humans and high quality], and even LLMs will "feel" better and deliver more.
