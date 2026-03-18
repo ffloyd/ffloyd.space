@@ -31,7 +31,7 @@ Like with sweets, it's easy to take too much.
 But instead of diabetes, you get anxiety and depression.
 Or even something like ADHD.
 
-The problem with fast dopamine is that it drains your energy and focus.
+The problem with excessive fast dopamine is that it drains your energy and focus.
 It does not make you better.
 It does not even make you feel better.
 [It makes you willing to swipe more.](https://biologyinsights.com/what-did-the-dopamine-rat-experiment-teach-us/)
@@ -66,7 +66,7 @@ In other words,
 > in order to fully enjoy the slow dopamine of Fediverse (and Small Web), you need a **purpose** that will give you a reason to create and communicate.
 
 It can be your hobby, personal philosophical research, whatever.
-But, I believe, it should be something :happy[_yours_].
+But, I believe, it should be something :happy[_yours_], not something _to please others_.
 
 ## It's Not Black and White
 
