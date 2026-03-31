@@ -1,31 +1,16 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
   import Container from '$lib/components/Container.svelte';
   import Timeline, { type TimelineItem } from '$lib/components/Timeline.svelte';
+  import thoughts from './thoughts';
 
-  const articlePagesMap = import.meta.glob<{ title: string; description: string }>(
-    './*/*.svelte.md',
-    { eager: true }
-  );
-
-  const items: TimelineItem[] = Object.entries(articlePagesMap)
-    .map(([key, module]) => {
-      const slug = key.split('/')[1];
-      // YYYY-MM-DD = 10 chars
-      const date = slug.slice(0, 10);
-
-      return { slug, date, ...module };
-    })
-    .filter(({ slug }) => slug[0] !== '_')
-    .map(({ slug, date, title, description }) => {
-      return {
-        href: `/thoughts/${slug}`,
-        date,
-        title,
-        description
-      };
-    })
-    .sort((a, b) => b.date.localeCompare(a.date));
+  const items: TimelineItem[] = thoughts.map((thought) => ({
+    href: `/thoughts/${thought.slug}`,
+    date: thought.date,
+    title: thought.title,
+    description: thought.description
+  }));
 </script>
 
 <svelte:head>
@@ -34,6 +19,12 @@
     name="description"
     content="I think a lot. Here are my thoughts. About technology, life, philosophy."
   />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Thoughts — ffloyd.space"
+    href="/thoughts/rss.xml"
+  />
 </svelte:head>
 
 <Container class="flex flex-col place-items-center">
@@ -41,6 +32,12 @@
 
   <div class="article">
     <h1>Thoughts</h1>
+
+    <p class="text-center">
+      Follow via
+      <span class="icon-[simple-icons--rss]"></span>
+      <a href={resolve('/thoughts/rss.xml')}>RSS</a>
+    </p>
   </div>
 
   <Timeline {items} />
