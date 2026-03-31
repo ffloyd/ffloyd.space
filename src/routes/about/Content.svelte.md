@@ -7,12 +7,10 @@ The site follows ideas of [Indie WEB](https://indieweb.org/) and self-expression
 
 ## Contacts
 
-Feel free to contact me via [hi@ffloyd.space](mailto:hi@ffloyd.space) or [reach me on Mastodon](https://mastodon.social/@ffloyd).
-
-You can find my public repositories on [GitHub](https://github.com/ffloyd).
-
-And here is my [LinkedIn profile](https://www.linkedin.com/in/kolesnev/), but I don't use it much.
-It's better to reach me via email or Mastodon.
+- [hi@ffloyd.space](mailto:hi@ffloyd.space)
+- [Mastodon](https://mastodon.social/@ffloyd)
+- [GitHub](https://github.com/ffloyd)
+- [LinkedIn profile](https://www.linkedin.com/in/kolesnev/), but I don't use it much
 
 ## The Idea
 

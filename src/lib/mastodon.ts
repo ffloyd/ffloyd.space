@@ -2,6 +2,7 @@ import { unified } from 'unified';
 import rehypeParse from 'rehype-parse';
 import rehypeSanitize from 'rehype-sanitize';
 import rehypeStringify from 'rehype-stringify';
+import rehypeExternalLinks from 'rehype-external-links';
 
 // subset of Mastodon API types for our use case
 interface MastodonApiStatus {
@@ -37,6 +38,7 @@ export interface Comment {
 function stripHTML(html: string): string {
   const sanitized = unified()
     .use(rehypeParse, { fragment: true })
+    .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer', 'nofollow'] })
     .use(rehypeSanitize)
     .use(rehypeStringify)
     .processSync(html);

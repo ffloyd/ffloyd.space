@@ -4,27 +4,23 @@ import { h } from 'hastscript';
 import './remark-parse-frontmatter.ts';
 
 /**
- * Rehype plugin that injects module-level exports for title and description.
- *
- * Responsible for prepending a <script module lang="ts"> block with:
- * - export const title = "..." or undefined
- * - export const description = "..." or undefined
+ * Rehype plugin that injects module-level exports for frontmatter and extacted title.
  *
  * These exports allow consumers to import metadata from the .svelte.md module.
- * Expects `file.data.title` and `file.data.frontmatter.description` to be set.
  */
 const rehypeSvelteExports: Plugin<[], HRoot> = () => {
   return (tree, file) => {
     const title = file.data.title;
-    const description = file.data.frontmatter?.description;
+    const frontmatter = file.data.frontmatter || {};
 
-    const titleExport = `export const title = ${JSON.stringify(title ?? null)};`;
-    const descriptionExport = `export const description = ${JSON.stringify(description ?? null)};`;
+    // frontmatter title has more priority than extacted
+    const valuesForExport = { title, ...frontmatter };
 
-    const moduleScript = h('script', { module: true, lang: 'ts' }, [
-      titleExport,
-      descriptionExport
-    ]);
+    const exports = Object.entries(valuesForExport)
+      .filter(([, value]) => !!value)
+      .map(([key, value]) => `export const ${key} = ${JSON.stringify(value ?? null)};`);
+
+    const moduleScript = h('script', { module: true, lang: 'ts' }, exports);
 
     tree.children.unshift(moduleScript);
   };

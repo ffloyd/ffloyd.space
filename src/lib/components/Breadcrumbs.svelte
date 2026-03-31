@@ -11,7 +11,7 @@
   let { items } = $props<{ items: BreadcrumbItems }>();
 </script>
 
-<nav class="flex gap-2 items-baseline">
+<nav class="flex gap-2 items-baseline my-4">
   {#each items as item, index (item.href)}
     <a href={resolve(item.href)} class="link-back text-2xl">{item.label}</a>
 

@@ -8,6 +8,8 @@
 @import '@fontsource/iosevka';
 @import '@fontsource/iosevka-etoile';
 
+@plugin '@iconify/tailwind4';
+
 @theme {
   --font-sans:
     'Iosevka Etoile', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',

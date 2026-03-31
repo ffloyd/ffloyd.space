@@ -29,7 +29,7 @@
 
 <PageWithSidebar>
   {#snippet sidebar()}
-    <a href={resolve('/')} class="link-back text-2xl">ffloyd.space</a>
+    <a href={resolve('/')} class="link-back text-2xl text-center">ffloyd.space</a>
 
     <div class="article">
       <Intro />

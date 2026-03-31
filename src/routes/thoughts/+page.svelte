@@ -1,5 +1,6 @@
 <script lang="ts">
-  import ArticleLayout from '$lib/components/ArticleLayout.svelte';
+  import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+  import Container from '$lib/components/Container.svelte';
   import Timeline, { type TimelineItem } from '$lib/components/Timeline.svelte';
 
   const articlePagesMap = import.meta.glob<{ title: string; description: string }>(
@@ -35,8 +36,12 @@
   />
 </svelte:head>
 
-<ArticleLayout breadcrumbs={[{ href: '/', label: 'ffloyd.space' }]}>
-  <h1>Thoughts</h1>
+<Container class="flex flex-col place-items-center">
+  <Breadcrumbs items={[{ href: '/', label: 'ffloyd.space' }]} />
+
+  <div class="article">
+    <h1>Thoughts</h1>
+  </div>
 
   <Timeline {items} />
-</ArticleLayout>
+</Container>

@@ -31,7 +31,7 @@
 
     {@render timelineDate(item.date, !isFirst)}
 
-    <div class="px-4 sm:pt-4 pb-8 sm:pb-12 border-l border-line-border">
+    <div class="px-4 sm:pt-4 pb-8 sm:pb-12 border-l border-line-border article">
       <h2 class="mt-0">
         <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
         <a class="no-underline" href={item.href}>{item.title}</a>

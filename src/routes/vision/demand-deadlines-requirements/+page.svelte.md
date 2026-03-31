@@ -24,7 +24,7 @@ While _converging_, :stoic[efficient formal reasoning] about the applicability o
 Here I propose a simple mental framework to make the _converge_ stage :happy[less stressful] and :stoic[more structured].
 Validate each idea from the perspective of three questions:
 
-- Who and what form the **demand**? (__Who__ needs it, __why__ and __how often__?)
+- Who and what form the **demand**? (**Who** needs it, **why** and **how often**?)
 - What are the **deadlines**?
 - What are the **requirements**?
 
@@ -42,7 +42,7 @@ It's important because there is usually either pain or curiosity behind the dema
 More often than not, it's pain.
 When you know the pain you solve, you can reject ideas that do not address this pain.
 Also be aware that using a new feature is always a discomfort for users, because they need to learn how to use it.
-Reject solutions that __are more painful to use__ than the pain you're trying to solve.
+Reject solutions that **are more painful to use** than the pain you're trying to solve.
 (E.g., if your automation is more _painful_ to use than the manual process, it's not a good solution.)
 
 **3. How often is the feature you're designing going to be used?**

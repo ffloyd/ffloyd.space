@@ -11,7 +11,7 @@
     <i class="nf nf-md-comment_text_outline"></i>
 
     <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-    <a href={comment.authorURL}>
+    <a href={comment.authorURL} target="_blank" rel="noreferrer noopener nofollow">
       <b>{comment.author}</b>
     </a>
 
@@ -32,7 +32,7 @@
         >
         <span>·</span>
         <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-        <a href={comment.url}>reply</a>
+        <a href={comment.url} target="_blank" rel="noreferrer noopener nofollow">reply</a>
       </div>
 
       {#if comment.replies.length > 0}

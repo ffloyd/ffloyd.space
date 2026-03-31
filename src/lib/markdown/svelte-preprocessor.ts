@@ -15,6 +15,7 @@ import rehypeExtractFirstH1 from './rehype-extract-first-h1.ts';
 import rehypeApplyLayout from './rehype-apply-layout.ts';
 import rehypeSvelteHead from './rehype-svelte-head.ts';
 import rehypeSvelteExports from './rehype-svelte-exports.ts';
+import rehypeExternalLinks from 'rehype-external-links';
 
 // Type override so I have files metadata properly typed.
 //
@@ -40,6 +41,8 @@ async function md2svelte(markdown: string): Promise<string> {
     .use(remarkParseFrontmatter)
     .use(remarkEmotionalHighlighting)
     .use(remarkRehype)
+    // I do not want external links in markdown to replace my content
+    .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] })
     .use(rehypeShiki, {
       langs: ['elixir'],
       theme: 'kanagawa-dragon'
