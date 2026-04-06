@@ -1,6 +1,6 @@
 import type { Plugin } from 'unified';
 import type { Root as HRoot } from 'hast';
-import { h } from 'hastscript';
+import appendToOrCreateScript from './append-to-or-create-script.ts';
 import './remark-parse-frontmatter.ts';
 
 /**
@@ -20,9 +20,10 @@ const rehypeSvelteExports: Plugin<[], HRoot> = () => {
       .filter(([, value]) => !!value)
       .map(([key, value]) => `export const ${key} = ${JSON.stringify(value ?? null)};`);
 
-    const moduleScript = h('script', { module: true, lang: 'ts' }, exports);
-
-    tree.children.unshift(moduleScript);
+    appendToOrCreateScript(tree, {
+      code: exports.join('\n'),
+      module: true
+    });
   };
 };
 

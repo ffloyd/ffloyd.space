@@ -1,6 +1,7 @@
 import type { Plugin } from 'unified';
 import type { Root as HRoot } from 'hast';
 import { h } from 'hastscript';
+import appendToOrCreateScript from './append-to-or-create-script.ts';
 
 /**
  * Rehype plugin that wraps content in a layout component based on frontmatter.
@@ -15,16 +16,15 @@ const rehypeApplyLayout: Plugin<[], HRoot> = () => {
     if (!layout) return;
 
     const layoutComponent = `${layout}Layout`;
-
-    const scriptWithImports = h('script', { lang: 'ts' }, [
-      `import ${layoutComponent} from "$lib/markdown/layouts/${layout}.svelte";`
-    ]);
-
     const wrappedInLayout = h(layoutComponent, { mastodonPostId }, tree.children);
     // `h` is convinient, but downcases tagName which breaks Svelte components
     wrappedInLayout.tagName = layoutComponent;
 
-    tree.children = [scriptWithImports, wrappedInLayout];
+    tree.children = [wrappedInLayout];
+
+    appendToOrCreateScript(tree, {
+      imports: `import ${layoutComponent} from "$lib/markdown/layouts/${layout}.svelte";`
+    });
   };
 };
 
