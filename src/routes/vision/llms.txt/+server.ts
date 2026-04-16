@@ -17,7 +17,7 @@ export const GET: RequestHandler = async () => {
     Object.values(articles).map(({ llmText }) => shiftHeadings(llmText));
 
   const parts: string[] = [
-    '# Vision — ffloyd.space',
+    '# Vision - ffloyd.space',
     '',
     '> Hard opinions about software development from ffloyd.space',
     '',
