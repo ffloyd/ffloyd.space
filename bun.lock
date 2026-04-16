@@ -40,6 +40,8 @@
         "globals": "^16.5.0",
         "hast-util-to-string": "^3.0.1",
         "hastscript": "^9.0.1",
+        "mdast-util-gfm": "^3.1.0",
+        "mdast-util-to-markdown": "^2.1.2",
         "prettier": "^3.8.1",
         "prettier-plugin-svelte": "^3.4.1",
         "prettier-plugin-tailwindcss": "^0.7.2",

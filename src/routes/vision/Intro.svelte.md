@@ -6,5 +6,7 @@ World is changing.
 We're changing.
 This page is also changing.
 
+You can add `/llms.txt` to this page or to any article in this section to get LLM-optimized version of the content.
+
 Want to discuss something?
 Write to [actually@ffloyd.space](mailto:actually@ffloyd.space).

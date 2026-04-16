@@ -4,21 +4,21 @@ import appendToOrCreateScript from './append-to-or-create-script.ts';
 import './remark-parse-frontmatter.ts';
 
 /**
- * Rehype plugin that injects module-level exports for frontmatter and extacted title.
+ * Rehype plugin that injects module-level exports.
  *
- * These exports allow consumers to import metadata from the .svelte.md module.
+ * It handles exporting the title, llmText, and all frontmatter properties as named exports from the .svelte.md module.
  */
 const rehypeSvelteExports: Plugin<[], HRoot> = () => {
   return (tree, file) => {
     const title = file.data.title;
     const frontmatter = file.data.frontmatter || {};
+    const llmText = file.data.llmText || null;
 
-    // frontmatter title has more priority than extacted
-    const valuesForExport = { title, ...frontmatter };
+    const valuesForExport = { title, llmText, ...frontmatter };
 
     const exports = Object.entries(valuesForExport)
       .filter(([, value]) => !!value)
-      .map(([key, value]) => `export const ${key} = ${JSON.stringify(value ?? null)};`);
+      .map(([key, value]) => `export const ${key} = ${JSON.stringify(value!)};`);
 
     appendToOrCreateScript(tree, {
       code: exports.join('\n'),
