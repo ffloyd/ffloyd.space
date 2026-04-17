@@ -1,0 +1,8 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "https://ffloyd.space/vision/llms.txt",
+    "README.md",
+    "STYLE_GUIDE.md"
+  ]
+}

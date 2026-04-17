@@ -87,6 +87,7 @@ You should, it's your advantage as an experienced engineer.
 Just make an extra effort to explain them in a way that your audience can understand.
 Explaining complex concepts simply is a sign of true mastery.
 
+:::human
 ## Hide unrelated complexity
 
 TBD
@@ -98,3 +99,4 @@ TBD
 ## Math is about simplifications
 
 TBD
+:::

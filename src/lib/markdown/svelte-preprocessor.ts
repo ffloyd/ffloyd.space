@@ -14,6 +14,7 @@ import rehypeMermaid from 'rehype-mermaid';
 import remarkEmotionalHighlighting from './emotional-highlighting.ts';
 import remarkParseFrontmatter from './remark-parse-frontmatter.ts';
 import remarkExtractLLMText from './remark-extract-llm-text.ts';
+import remarkVisibility from './remark-visibility.ts';
 import rehypeExtractFirstH1 from './rehype-extract-first-h1.ts';
 import rehypeApplyLayout from './rehype-apply-layout.ts';
 import rehypeSvelteHead from './rehype-svelte-head.ts';
@@ -44,12 +45,13 @@ async function md2svelte(markdown: string): Promise<string> {
     .use(remarkFrontmatter)
     .use(remarkParseFrontmatter)
     .use(remarkExtractLLMText)
+    .use(remarkVisibility, { unwrap: ['human'], hide: ['llm'] })
     .use(remarkEmotionalHighlighting)
     .use(remarkRehype)
     .use(rehypeMermaid, {
       strategy: 'pre-mermaid'
     })
-    // I do not want external links in markdown to replace my page on navigation 
+    // I do not want external links in markdown to replace my page on navigation
     .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] })
     .use(rehypeShiki, {
       langs: ['elixir'],
