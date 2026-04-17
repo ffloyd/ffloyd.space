@@ -10,9 +10,11 @@ import YAML from 'yaml';
  */
 const remarkParseFrontmatter: Plugin<[], MDRoot> = () => {
   return (tree, file) => {
-    if (tree.children[0]?.type !== 'yaml') return;
+    const firstNode = tree.children[0];
 
-    const rawFrontmatter = tree.children[0].value;
+    if (firstNode?.type !== 'yaml') return;
+
+    const rawFrontmatter = firstNode.value;
     const frontmatter = YAML.parse(rawFrontmatter);
 
     file.data.frontmatter = frontmatter;

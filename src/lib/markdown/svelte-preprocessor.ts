@@ -11,7 +11,7 @@ import rehypeStringify from 'rehype-stringify';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeMermaid from 'rehype-mermaid';
 
-import remarkEmotionalHighlighting from './emotional-highlighting.ts';
+import remarkEmotionalHighlighting from './remark-emotional-highlighting.ts';
 import remarkParseFrontmatter from './remark-parse-frontmatter.ts';
 import remarkExtractLLMText from './remark-extract-llm-text.ts';
 import remarkVisibility from './remark-visibility.ts';

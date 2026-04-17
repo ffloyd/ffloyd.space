@@ -4,21 +4,22 @@ import remarkParse from 'remark-parse';
 import remarkGFM from 'remark-gfm';
 import remarkDirective from 'remark-directive';
 import remarkFrontmatter from 'remark-frontmatter';
+import remarkStringify from 'remark-stringify';
 import { VFile } from 'vfile';
+
 import remarkExtractLLMText from './remark-extract-llm-text.ts';
 
 function extractLlmText(markdown: string): string {
-  const processor = unified()
+  const result = unified()
     .use(remarkParse)
     .use(remarkGFM)
     .use(remarkDirective)
     .use(remarkFrontmatter)
-    .use(remarkExtractLLMText);
+    .use(remarkExtractLLMText)
+    .use(remarkStringify)
+    .processSync(new VFile({ value: markdown }));
 
-  const file = new VFile({ value: markdown });
-  const tree = processor.parse(file);
-  processor.runSync(tree, file);
-  return file.data.llmText!;
+  return result.data.llmText!;
 }
 
 describe('remarkExtractLLMText', () => {

@@ -4,9 +4,7 @@ import remarkParse from 'remark-parse';
 import remarkGFM from 'remark-gfm';
 import remarkDirective from 'remark-directive';
 import remarkVisibility from './remark-visibility.ts';
-import { toMarkdown } from 'mdast-util-to-markdown';
-import { gfmToMarkdown } from 'mdast-util-gfm';
-import { directiveToMarkdown } from 'mdast-util-directive';
+import remarkStringify from 'remark-stringify';
 
 const OPTS = { unwrap: ['human'], hide: ['llm'] };
 
@@ -14,15 +12,15 @@ function transformMarkdown(
   markdown: string,
   opts = OPTS
 ): string {
-  const processor = unified()
+  const result = unified()
     .use(remarkParse)
     .use(remarkGFM)
     .use(remarkDirective)
-    .use(remarkVisibility, opts);
+    .use(remarkVisibility, opts)
+    .use(remarkStringify)
+    .processSync(markdown);
 
-  const tree = processor.parse(markdown);
-  const transformed = processor.runSync(tree);
-  return toMarkdown(transformed, { extensions: [gfmToMarkdown(), directiveToMarkdown()] });
+  return result.toString();
 }
 
 describe('remarkVisibility', () => {
