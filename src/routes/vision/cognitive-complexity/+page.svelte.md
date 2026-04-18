@@ -88,6 +88,7 @@ Just make an extra effort to explain them in a way that your audience can unders
 Explaining complex concepts simply is a sign of true mastery.
 
 :::human
+
 ## Hide unrelated complexity
 
 TBD

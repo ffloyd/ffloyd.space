@@ -21,10 +21,7 @@ const remarkVisibility: Plugin<[{ unwrap: string[]; hide: string[] }], Root> = (
   hide
 }) => {
   return (tree: Root) => {
-    remove(
-      tree,
-      ((node: MdastNode) => isDirectiveNode(node) && hide.includes(node.name)) as Test
-    );
+    remove(tree, ((node: MdastNode) => isDirectiveNode(node) && hide.includes(node.name)) as Test);
 
     unwrapInTree(tree, (node) => isDirectiveNode(node) && unwrap.includes(node.name));
   };

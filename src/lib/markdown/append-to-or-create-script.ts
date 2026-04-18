@@ -15,37 +15,39 @@ export default function appendToOrCreateScript(
     module?: boolean;
   }
 ): void {
-  const existingScript = tree.children.find((child) => {
+  const { imports: importsToAdd, code: codeToAppend, module: svelteModuleScript } = script;
+  const existingScript = findScript(tree, !!svelteModuleScript);
+
+  if (existingScript) {
+    if (importsToAdd)
+      existingScript.children.unshift({
+        type: 'text',
+        value: `${importsToAdd}\n\n`
+      });
+
+    if (codeToAppend)
+      existingScript.children.push({
+        type: 'text',
+        value: `\n\n${codeToAppend}`
+      });
+  } else {
+    const props: Properties = { lang: 'ts' };
+
+    if (svelteModuleScript) props.module = true;
+
+    const content = [importsToAdd, codeToAppend].filter(Boolean).join('\n\n');
+
+    tree.children.unshift(h('script', props, content));
+  }
+}
+
+function findScript(tree: HRoot, findModuleScript: boolean): Element | undefined {
+  return tree.children.find((child) => {
     const isScriptTag =
       child.type === 'element' && child.tagName === 'script' && child.properties.lang === 'ts';
 
     const isModuleScript = child.type === 'element' && child.properties.module === true;
 
-    return isScriptTag && (!script.module || isModuleScript);
-  }) as Element;
-
-  if (existingScript) {
-    if (script.imports) {
-      existingScript.children.unshift({
-        type: 'text',
-        value: `${script.imports}\n\n`
-      });
-    }
-
-    if (script.code) {
-      existingScript.children.push({
-        type: 'text',
-        value: `\n\n${script.code}`
-      });
-    }
-  } else {
-    const props: Properties = { lang: 'ts' };
-    if (script.module) {
-      props.module = true;
-    }
-
-    const content = [script.imports, script.code].filter(Boolean).join('\n\n');
-
-    tree.children.unshift(h('script', props, content));
-  }
+    return isScriptTag && (!findModuleScript || isModuleScript);
+  }) as Element | undefined;
 }

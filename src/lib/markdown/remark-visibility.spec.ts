@@ -8,10 +8,7 @@ import remarkStringify from 'remark-stringify';
 
 const OPTS = { unwrap: ['human'], hide: ['llm'] };
 
-function transformMarkdown(
-  markdown: string,
-  opts = OPTS
-): string {
+function transformMarkdown(markdown: string, opts = OPTS): string {
   const result = unified()
     .use(remarkParse)
     .use(remarkGFM)

@@ -13,8 +13,7 @@ import articles from '../articles.ts';
 export const prerender = true;
 
 export const GET: RequestHandler = async () => {
-  const articleSections =
-    Object.values(articles).map(({ llmText }) => shiftHeadings(llmText));
+  const articleSections = Object.values(articles).map(({ llmText }) => shiftHeadings(llmText));
 
   const parts: string[] = [
     '# Vision - ffloyd.space',
@@ -29,16 +28,14 @@ export const GET: RequestHandler = async () => {
   });
 };
 
-const shiftHeadings = (markdown: string): string => (
+const shiftHeadings = (markdown: string): string =>
   unified()
     .use(remarkParse)
     .use(remarkGFM)
     .use(remarkShiftHeadings, { depth: 1 })
     .use(remarkStringify)
     .processSync(markdown)
-    .value
-    .toString()
-);
+    .value.toString();
 
 const remarkShiftHeadings: Plugin<[{ depth: number }], Root> = ({ depth }) => {
   return (tree) => {
@@ -47,4 +44,3 @@ const remarkShiftHeadings: Plugin<[{ depth: number }], Root> = ({ depth }) => {
     });
   };
 };
-
