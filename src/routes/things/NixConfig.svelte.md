@@ -2,7 +2,10 @@
 title: Nix Setup
 icon: icon-[simple-icons--nixos]
 year: 'since 2024'
-link: https://github.com/ffloyd/nix
+links:
+  - icon: icon-[simple-icons--github]
+    label: github
+    url: https://github.com/ffloyd/nix
 ---
 
 Dotfiles, Vim config, NixOS config, MacOS app management, packaging apps, development environments, etc - I use [Nix](https://nixos.org/) for all of them.

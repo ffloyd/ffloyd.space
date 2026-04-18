@@ -2,7 +2,13 @@
 title: ffloyd.space
 icon: $ffloyd-space
 year: 'since 2026'
-link: https://github.com/ffloyd/ffloyd.space
+links:
+  - icon: icon-[mdi--web]
+    label: web
+    url: https://ffloyd.space
+  - icon: icon-[simple-icons--github]
+    label: github
+    url: https://github.com/ffloyd/ffloyd.space
 ---
 
 After building [marina-coach.me](https://marina-coach.me/) with SvelteKit instead of CMS or static site generator, I liked the approach so much that I reused it for my personal site.

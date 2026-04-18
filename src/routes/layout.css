@@ -68,6 +68,15 @@ Use for hover/focus/active states on interactive elements.
 }
 
 /*
+Underline is the signature link decoration.
+
+We reuse it in different contexts, so it's defined as utility.
+*/
+@utility link-underline {
+  @apply underline decoration-line-border decoration-2 underline-offset-4;
+}
+
+/*
 Tailwind typography theme for long reading.
 */
 @utility prose-space {
@@ -102,14 +111,22 @@ Tailwind typography theme for long reading.
     @apply prose-h1:text-center;
 
     /* Links intentionally differ from navigation link styling. */
-    @apply prose-a:decoration-line-border prose-a:decoration-2 prose-a:underline-offset-4;
+    @apply prose-a:link-underline;
     @apply prose-a:hover:text-content-active prose-a:hover:text-glow;
     @apply prose-a:transition-all prose-a:duration-200;
   }
 
-  /* Primary navigational link. */
+  /* Primary navigational link. No underline, but accent color. */
   .link {
     @apply text-content-accent;
+    @apply hover:text-content-active hover:text-glow;
+    @apply active:text-content-active active:text-glow;
+    @apply transition-all duration-200;
+  }
+
+  /* Sedondary navigational link. Less bright, but with underline. */
+  .link-secondary {
+    @apply text-content-dim link-underline;
     @apply hover:text-content-active hover:text-glow;
     @apply active:text-content-active active:text-glow;
     @apply transition-all duration-200;

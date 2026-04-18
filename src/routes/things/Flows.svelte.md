@@ -2,7 +2,10 @@
 title: flows
 icon: icon-[simple-icons--ruby]
 year: '2020'
-link: https://github.com/ffloyd/flows
+links:
+  - icon: icon-[simple-icons--github]
+    label: github
+    url: https://github.com/ffloyd/flows
 ---
 
 A library for Ruby that implements flexible DSL for writing service objects.

@@ -2,7 +2,10 @@
 title: marina-coach.me
 icon: icon-[simple-icons--svelte]
 year: 'since 2025'
-link: https://marina-coach.me/
+links:
+  - icon: icon-[mdi--web]
+    label: web
+    url: https://marina-coach.me/
 ---
 
 My first [SvelteKit](https://svelte.dev/) project.
